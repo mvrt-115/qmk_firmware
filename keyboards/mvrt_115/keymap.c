@@ -1,0 +1,25 @@
+#include QMK_KEYBOARD_H
+
+// #define LAYOUT( \
+//     K00, K01, K02, K03, \
+//     K10, K11, K12, K13, \
+//     K20, K21, K22, K23 \
+// ) { \
+//     { K00, K01, K02, K03 }, \
+//     { K10, K11, K12, K13 }, \
+//     { K20, K21, K22, K23 } \
+// }
+
+#define LAYOUT( \
+    K00, K01, K02, K03 \
+) { \
+    { K00, K01, K02, K03 }
+}
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT(
+        QK_JOYSTICK_BUTTON_0, QK_JOYSTICK_BUTTON_1, QK_JOYSTICK_BUTTON_2, QK_JOYSTICK_BUTTON_3//,
+        // QK_JOYSTICK_BUTTON_4, QK_JOYSTICK_BUTTON_5, QK_JOYSTICK_BUTTON_6, QK_JOYSTICK_BUTTON_7,
+        // QK_JOYSTICK_BUTTON_8, QK_JOYSTICK_BUTTON_9, QK_JOYSTICK_BUTTON_10, QK_JOYSTICK_BUTTON_11
+    )
+};
