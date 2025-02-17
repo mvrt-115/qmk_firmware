@@ -1,26 +1,33 @@
 #include QMK_KEYBOARD_H
 
-// #ifndef ADC_PIN
-// #    define ADC_PIN F6
-// #endif
+led_config_t g_led_config = { {
+    {25, 26, 27, 28, 29},
+    {20, 21, 22, 23, 24},
+    {15, 16, 17, 18, 19},
+    {10, 11, 12, 13, 14},
+    {5, 6, 7, 8, 9},
+    {0, 1, 2, 3, 4}
+},{
 
-// const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//     LAYOUT_ortho_1x1(JS_0)
-// };
-
-// void matrix_scan_user(void) {
-//     int16_t val = (((uint32_t)timer_read() % 5000 - 2500) * 255) / 5000;
-//     joystick_set_axis(1, val);
-// }
-
-// // Joystick config
-// joystick_config_t joystick_axes[JOYSTICK_AXIS_COUNT] = {
-//     [0] = JOYSTICK_AXIS_IN(ADC_PIN, 0, 512, 1023),
-//     [1] = JOYSTICK_AXIS_VIRTUAL
-// };
+	// Physical X,Y coordinates of each LED, starting with LED 0 above.
+	{224, 0}, {224, 16}, {224, 32}, {224, 48}, {224, 64},
+    {180, 0}, {180, 16}, {180, 32}, {180, 48}, {180, 64},
+    {135, 0}, {135, 16}, {135, 32}, {135, 48}, {135, 64},
+    {90, 0}, {90, 16}, {90, 32}, {90, 48}, {90, 64},
+    {45, 0}, {45, 16}, {45, 32}, {45, 48}, {45, 64},
+    {0, 0}, {0, 16}, {0, 32}, {0, 48}, {0, 64}
+},{
+	// "Flag Assignment" of each key
+	4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4,
+    4, 4, 4, 4, 4
+} };
 
 //rows and cols are inverted
-//for {K00, K01} etc each set of brackets is 
+//for {K00, K01} etc each set of brackets is
 #define LAYOUT( \
        K00, K01, K02, K03, K04, \
        K05, K06, K07, K08, K09, \
